@@ -1,4 +1,5 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Show } from 'src/app/services/show.model';
 
 @Component({
 	selector: 'app-show-card',
