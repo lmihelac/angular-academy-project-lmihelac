@@ -2,8 +2,8 @@ export class Show {
 	constructor(rawShow: any) {
 		this.title = rawShow.title;
 		this.description = rawShow.description;
-		this.averageRating = rawShow.description;
-		this.imageUrl = rawShow.description;
+		this.averageRating = rawShow.average_rating;
+		this.imageUrl = rawShow.image_url;
 	}
 	title: string;
 	description: string;
