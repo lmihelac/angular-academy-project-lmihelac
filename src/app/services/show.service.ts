@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { IRawShow } from '../interfaces/rawShow.interface';
 import { Show } from './show.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShowService {
-private	rawData = [
+private	rawData: Array<IRawShow> = [
 		{
 			title: 'Planet Earth 2',
 			description:
@@ -55,7 +56,7 @@ private	rawData = [
 	];
 
   public getShows(): Array<Show> {
-    return this.rawData.map((rawShow) => {
+    return this.rawData.map((rawShow: IRawShow) => {
 			return new Show(rawShow);
 		});
   } //funkcija za fetchanje svih showova
