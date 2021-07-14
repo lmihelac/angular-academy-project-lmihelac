@@ -54,14 +54,18 @@ private	rawData = [
 
 	];
 
-  getShows(): Array<Show> {
+  public getShows(): Array<Show> {
     return this.rawData.map((rawShow) => {
 			return new Show(rawShow);
 		});
-  }
+  } //funkcija za fetchanje svih showova
 
-  getTopRatedShows(): Array<Show> {
+   public getTopRatedShows(): Array<Show> {
     return this.getShows().filter((show: Show) => show.averageRating > 4)
-		};
+		}; //f-ja za fetchanje showova sa ratingom > 4
+
+  public getShow(id: string): Show | undefined {
+    return this.getShows().find((show: Show) => show.id === id);
+    };
   
 }
