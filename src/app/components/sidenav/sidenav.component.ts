@@ -6,8 +6,19 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 	styleUrls: ['./sidenav.component.scss'],
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SidenavComponent implements OnInit {
-	constructor() {}
-
-	ngOnInit(): void {}
+export class SidenavComponent  {
+	links: Array<any> = [
+		{
+			url: '',
+			title: 'All shows' 
+		},
+		{
+			url: '',
+			title: 'My profile' 
+		},
+		{
+			url: '/top-rated',
+			title: 'Top rated shows' 
+		}
+	];
 }
