@@ -1,7 +1,7 @@
 import { IRawShow } from "../interfaces/rawShow.interface";
 
 export class Show {
-	constructor(rawShow: IRawShow) {
+public	constructor(rawShow: IRawShow) {
 		this.title = rawShow.title;
 		this.description = rawShow.description;
 		this.averageRating = rawShow.average_rating;

@@ -10,7 +10,7 @@ import { ShowService } from 'src/app/services/show.service';
 })
 export class AllShowsContainerComponent  {
 
-	shows: Array<Show>;
+public shows: Array<Show>;
 
 	constructor(private showService: ShowService) {
 
