@@ -73,7 +73,7 @@ private	rawData: Array<IRawShow> = [
 
   public getShow(id: string): Observable<Show | null> {
     return this.getShows().pipe(map((shows) => shows.find((show: Show)=> show.id === id) || null));
-    }; //zasto dohvacamo sve?
+    }; //zasto dohvacamo sve pa filtriramo?
   
 }
 

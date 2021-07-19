@@ -1,1 +1,3 @@
-<p>reviews-container works!</p>
+<ng-container *ngIf="(review$ | async) as review">
+	<app-review-list [review]="review"></app-review-list>
+</ng-container>

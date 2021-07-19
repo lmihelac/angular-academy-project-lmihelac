@@ -17,7 +17,8 @@ import { ShowDetailContainerComponent } from './components/show-detail-container
 import { ShowDetailComponent } from './components/show-detail/show-detail.component';
 import { MyProfileComponent } from './components/my-profile/my-profile.component';
 import { ReviewsContainerComponent } from './components/reviews-container/reviews-container.component';
-import { ReviewDetailComponent } from './components/review-detail/review-detail.component';
+import { ReviewListComponent } from './components/review-list/review-list.component';
+import { ReviewCardComponent } from './components/review-card/review-card.component';
 
 @NgModule({
 	declarations: [
@@ -33,7 +34,8 @@ import { ReviewDetailComponent } from './components/review-detail/review-detail.
   ShowDetailComponent,
   MyProfileComponent,
   ReviewsContainerComponent,
-  ReviewDetailComponent,
+  ReviewListComponent,
+  ReviewCardComponent,
 	],
 	imports: [BrowserModule, BrowserAnimationsModule, MatCardModule, MatSidenavModule, AppRoutingModule],
 	providers: [],
