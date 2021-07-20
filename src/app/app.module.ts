@@ -16,7 +16,6 @@ import { TopRatedShowsComponent } from './components/top-rated-shows/top-rated-s
 import { ShowDetailContainerComponent } from './components/show-detail-container/show-detail-container.component';
 import { ShowDetailComponent } from './components/show-detail/show-detail.component';
 import { MyProfileComponent } from './components/my-profile/my-profile.component';
-import { ReviewsContainerComponent } from './components/reviews-container/reviews-container.component';
 import { ReviewListComponent } from './components/review-list/review-list.component';
 import { ReviewCardComponent } from './components/review-card/review-card.component';
 
@@ -33,7 +32,6 @@ import { ReviewCardComponent } from './components/review-card/review-card.compon
   ShowDetailContainerComponent,
   ShowDetailComponent,
   MyProfileComponent,
-  ReviewsContainerComponent,
   ReviewListComponent,
   ReviewCardComponent,
 	],
