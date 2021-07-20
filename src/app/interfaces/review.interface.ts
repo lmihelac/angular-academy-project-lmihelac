@@ -1,6 +1,6 @@
 export interface IReview {
 	text: string;
 	showId: string;
-	reviewId: string;
+	id: string;
 	rating: number;
 }

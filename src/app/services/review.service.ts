@@ -13,73 +13,73 @@ export class ReviewService {
     {
       text: "The opening image of Planet Earth II contained the promise of everything to come. It was spectacular, it was beautiful, it was magical.A hot air balloon floated like a snowflake, two miles above an Alpine.",
       showId: "1",
-      reviewId: "1",
+      id: "1",
       rating: 4,
     },
     {
       text: "The opening image of Planet Earth II contained the promise of everything to come. It was spectacular, it was beautiful, it was magical.A hot air balloon floated like a snowflake, two miles above an Alpine.",
       showId: "1",
-      reviewId: "2",
+      id: "2",
       rating: 4,
     },
     {
       text: "The opening image of Planet Earth II contained the promise of everything to come. It was spectacular, it was beautiful, it was magical.A hot air balloon floated like a snowflake, two miles above an Alpine.",
       showId: "1",
-      reviewId: "3",
+      id: "3",
       rating: 4,
     }, //reviews od show 1 -> Planet Earth 2
     {
       text: "The opening image of Planet Earth II contained the promise of everything to come. It was spectacular, it was beautiful, it was magical.A hot air balloon floated like a snowflake, two miles above an Alpine.",
       showId: "2",
-      reviewId: "1",
+      id: "1",
       rating: 4,
     },
     {
       text: "The opening image of Planet Earth II contained the promise of everything to come. It was spectacular, it was beautiful, it was magical.A hot air balloon floated like a snowflake, two miles above an Alpine.",
       showId: "2",
-      reviewId: "2",
+      id: "2",
       rating: 4,
     },
     {
       text: "The opening image of Planet Earth II contained the promise of everything to come. It was spectacular, it was beautiful, it was magical.A hot air balloon floated like a snowflake, two miles above an Alpine.",
       showId: "2",
-      reviewId: "3",
+      id: "3",
       rating: 4,
     }, //review show 2
     {
       text: "The opening image of Planet Earth II contained the promise of everything to come. It was spectacular, it was beautiful, it was magical.A hot air balloon floated like a snowflake, two miles above an Alpine.",
       showId: "3",
-      reviewId: "1",
+      id: "1",
       rating: 4,
     },
     {
       text: "The opening image of Planet Earth II contained the promise of everything to come. It was spectacular, it was beautiful, it was magical.A hot air balloon floated like a snowflake, two miles above an Alpine.",
       showId: "3",
-      reviewId: "2",
+      id: "2",
       rating: 4,
     }, //review show 3
     {
       text: "The opening image of Planet Earth II contained the promise of everything to come. It was spectacular, it was beautiful, it was magical.A hot air balloon floated like a snowflake, two miles above an Alpine.",
       showId: "4",
-      reviewId: "1",
+      id: "1",
       rating: 4,
     },
     {
       text: "The opening image of Planet Earth II contained the promise of everything to come. It was spectacular, it was beautiful, it was magical.A hot air balloon floated like a snowflake, two miles above an Alpine.",
       showId: "4",
-      reviewId: "2",
+      id: "2",
       rating: 4,
     }, // review show 4
     {
       text: "The opening image of Planet Earth II contained the promise of everything to come. It was spectacular, it was beautiful, it was magical.A hot air balloon floated like a snowflake, two miles above an Alpine.",
       showId: "5",
-      reviewId: "1",
+      id: "1",
       rating: 4,
     },
     {
       text: "The opening image of Planet Earth II contained the promise of everything to come. It was spectacular, it was beautiful, it was magical.A hot air balloon floated like a snowflake, two miles above an Alpine.",
       showId: "5",
-      reviewId: "2",
+      id: "2",
       rating: 4,
     }, //review show 5
 

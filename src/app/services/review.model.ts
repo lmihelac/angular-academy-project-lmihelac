@@ -5,11 +5,11 @@ export class Review {
 public	constructor(review: IReview) {
 		this.text = review.text;
 		this.showId = review.showId;
-		this.reviewId = review.reviewId;
+		this.id = review.id;
 		this.rating = review.rating;
 	}
 	public text: string;
 	public showId: string;
-	public reviewId: string;
+	public id: string;
 	public rating: number;
 }
