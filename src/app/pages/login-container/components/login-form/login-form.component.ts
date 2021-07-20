@@ -1,4 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-login-form',
@@ -6,11 +7,13 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./login-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LoginFormComponent implements OnInit {
+export class LoginFormComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  public loginFormGroup: FormGroup = new FormGroup(
+    {
+    email: new FormControl(''),
+    password: new FormControl(''),
+    }
+  );
 
 }

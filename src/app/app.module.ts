@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -26,27 +30,37 @@ import { LoginFormComponent } from './pages/login-container/components/login-for
 
 
 @NgModule({
-	declarations: [
+	declarations: 
+  [
+		AllShowsContainerComponent,
 		AppComponent,
 		MainLayoutComponentComponent,
-		SidenavComponent,
-		AllShowsContainerComponent,
-		ShowListComponent,
 		ShowCardComponent,
-  RatingComponent,
-  TopRatedShowsComponent,
-  ShowDetailContainerComponent,
-  ShowDetailComponent,
-  MyProfileComponent,
-  ReviewListComponent,
-  ReviewCardComponent,
-  FormLayoutComponent,
-  RegistrationContainerComponent,
-  RegistrationFormComponent,
-  LoginContainerComponent,
-  LoginFormComponent,
-],
-	imports: [BrowserModule, BrowserAnimationsModule, MatCardModule, MatSidenavModule, AppRoutingModule],
+		ShowListComponent,
+		SidenavComponent,
+    FormLayoutComponent,
+    LoginContainerComponent,
+    LoginFormComponent,
+    MyProfileComponent,
+    RatingComponent,
+    RegistrationContainerComponent,
+    RegistrationFormComponent,
+    ReviewCardComponent,
+    ReviewListComponent,
+    ShowDetailComponent,
+    ShowDetailContainerComponent,
+    TopRatedShowsComponent,
+  ],
+	imports: 
+  [
+    AppRoutingModule,
+    BrowserAnimationsModule, 
+    BrowserModule, 
+    MatCardModule, 
+    MatFormFieldModule,
+    MatSidenavModule, 
+    ReactiveFormsModule,
+  ],
 	providers: [],
 	bootstrap: [AppComponent],
 })
