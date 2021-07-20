@@ -18,6 +18,11 @@ import { ShowDetailComponent } from './pages/show-detail-container/components/sh
 import { MyProfileComponent } from './pages/my-profile/my-profile.component';
 import { ReviewListComponent } from './components/review-list/review-list.component';
 import { ReviewCardComponent } from './components/review-card/review-card.component';
+import { FormLayoutComponent } from './components/form-layout/form-layout.component';
+import { RegistrationContainerComponent } from './pages/registration-container/registration-container.component';
+import { RegistrationFormComponent } from './pages/registration-container/components/registration-form/registration-form.component';
+import { LoginContainerComponent } from './pages/login-container/login-container.component';
+import { LoginFormComponent } from './pages/login-container/components/login-form/login-form.component';
 
 
 @NgModule({
@@ -35,6 +40,11 @@ import { ReviewCardComponent } from './components/review-card/review-card.compon
   MyProfileComponent,
   ReviewListComponent,
   ReviewCardComponent,
+  FormLayoutComponent,
+  RegistrationContainerComponent,
+  RegistrationFormComponent,
+  LoginContainerComponent,
+  LoginFormComponent,
 ],
 	imports: [BrowserModule, BrowserAnimationsModule, MatCardModule, MatSidenavModule, AppRoutingModule],
 	providers: [],
