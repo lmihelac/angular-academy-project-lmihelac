@@ -9,6 +9,6 @@ import { Review } from 'src/app/services/review.model';
 })
 export class ReviewListComponent {
 
-	@Input() review: Array<Review>;
+	@Input() reviews: Array<Review>;
 
 }
