@@ -95,7 +95,7 @@ export class ReviewService {
 		return of(this.review).pipe(delay(1200)); 
   } // f-ja za fetchanje svih reviewa
 
-  //tu treba bit array
+
   public getShowReviews(id: string): Observable<Array<Review>> {
     return this.getReviews().pipe
     (map((reviews) => reviews.filter((review: Review)=> review.showId === id) || null));

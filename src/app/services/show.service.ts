@@ -16,7 +16,7 @@ private	rawData: Array<IRawShow> = [
 			average_rating: 5,
       id: '1',
 			image_url:
-				'https://i1.wp.com/www.travindy.com/wp-content/uploads/2018/04/Planet-Earth-Article-Image.jpg?fit=1920%2C1920&ssl=1',
+				'https://m.media-amazon.com/images/M/MV5BZWYxODViMGYtMGE2ZC00ZGQ3LThhMWUtYTVkNGE3OWU4NWRkL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMjYwNDA2MDE@._V1_.jpg',
 		},
 		{
 			title: 'Band of Brothers',
@@ -25,7 +25,7 @@ private	rawData: Array<IRawShow> = [
 			average_rating: 3,
       id: '2',
 			image_url:
-				'https://i1.wp.com/www.travindy.com/wp-content/uploads/2018/04/Planet-Earth-Article-Image.jpg?fit=1920%2C1920&ssl=1',
+				'https://m.media-amazon.com/images/M/MV5BMTI3ODc2ODc0M15BMl5BanBnXkFtZTYwMjgzNjc3._V1_FMjpg_UX1000_.jpg',
 		},
 		{
 			title: 'Breaking Bad',
@@ -34,7 +34,7 @@ private	rawData: Array<IRawShow> = [
 			average_rating: 2,
       id: '3',
 			image_url:
-				'https://i1.wp.com/www.travindy.com/wp-content/uploads/2018/04/Planet-Earth-Article-Image.jpg?fit=1920%2C1920&ssl=1',
+				'https://m.media-amazon.com/images/M/MV5BMjhiMzgxZTctNDc1Ni00OTIxLTlhMTYtZTA3ZWFkODRkNmE2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg',
 		},
     {
 			title: 'Chernobyl',
@@ -43,7 +43,7 @@ private	rawData: Array<IRawShow> = [
 			average_rating: 2,
       id: '4',
 			image_url:
-				'https://i1.wp.com/www.travindy.com/wp-content/uploads/2018/04/Planet-Earth-Article-Image.jpg?fit=1920%2C1920&ssl=1',
+				'https://i.pinimg.com/originals/9a/23/83/9a2383b8f04594a392ff5244e7b0ce28.jpg',
 		},
     {
 			title: 'The Wire',
@@ -52,7 +52,7 @@ private	rawData: Array<IRawShow> = [
 			average_rating: 4.5,
       id: '5',
 			image_url:
-				'https://i1.wp.com/www.travindy.com/wp-content/uploads/2018/04/Planet-Earth-Article-Image.jpg?fit=1920%2C1920&ssl=1',
+				'https://upload.wikimedia.org/wikipedia/en/4/4e/The_Wire_-_Season_3.jpg',
 		},
 
 	];
