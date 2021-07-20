@@ -8,8 +8,8 @@ public	constructor(review: IReview) {
 		this.reviewId = review.reviewId;
 		this.rating = review.rating;
 	}
-	text: string;
-	showId: string;
-	reviewId: string;
-	rating: number;
+	public text: string;
+	public showId: string;
+	public reviewId: string;
+	public rating: number;
 }
