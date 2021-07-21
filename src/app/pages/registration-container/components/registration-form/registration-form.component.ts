@@ -18,6 +18,7 @@ export class RegistrationFormComponent {
   );
 
   public onRegister(): void {
-    console.log(this.registrationFormGroup.value)
+    console.log(this.registrationFormGroup.value);
+    this.registrationFormGroup.reset();
   }
 }

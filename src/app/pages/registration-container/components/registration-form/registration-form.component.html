@@ -2,7 +2,7 @@
 	<form [formGroup]="registrationFormGroup">
 		<mat-form-field appearance="outline">
 			<mat-label>Email</mat-label>
-			<input matInput placeholder="ex.. john@doe.com" formControlName="email" />
+			<input matInput placeholder="ex.. john@doe.com" formControlName="email" [email]="true" />
 			<mat-icon matSuffix>person</mat-icon>
 		</mat-form-field>
 

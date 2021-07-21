@@ -11,12 +11,14 @@ export class LoginFormComponent {
 
   public loginFormGroup: FormGroup = new FormGroup(
     {
-    email: new FormControl(''),
+    email: new FormControl('',[Validators.required, Validators.email,]),
     password: new FormControl('', [Validators.required, Validators.minLength(8)]),
     }
   );
 
   public onLogin(): void {
-    console.log(this.loginFormGroup.value)
+    console.log(this.loginFormGroup.value);
+    this.loginFormGroup.reset();
+
   }
 }

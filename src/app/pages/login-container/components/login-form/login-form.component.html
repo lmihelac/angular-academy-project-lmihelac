@@ -4,13 +4,18 @@
 			<mat-label>Email</mat-label>
 			<input matInput placeholder="Placeholder" formControlName="email" />
 			<mat-icon matSuffix>person</mat-icon>
-			<mat-error>Enter valid email adress</mat-error>
+			<mat-error *ngIf="loginFormGroup.get('email')?.errors?.required">Email is required</mat-error>
+			<mat-error *ngIf="loginFormGroup.get('email')?.errors?.email">Not a valid email adress</mat-error>
 		</mat-form-field>
+
 
 		<mat-form-field appearance="outline">
 			<mat-label>Password</mat-label>
 			<input matInput placeholder="Placeholder" formControlName="password" />
 			<mat-icon matSuffix>lock</mat-icon>
+			<mat-error *ngIf="loginFormGroup.get('password')?.errors?.required">Password is required</mat-error>
+			<mat-error *ngIf="loginFormGroup.get('password')?.errors?.minlength">Password must be at least 8 characters long!
+			</mat-error>
 		</mat-form-field>
 
 		<button mat-raised-button color="primary" (click)="onLogin()" [disabled]="loginFormGroup.invalid">Login</button>
