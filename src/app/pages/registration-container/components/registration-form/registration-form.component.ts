@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-registration-form',
@@ -6,11 +7,17 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./registration-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RegistrationFormComponent implements OnInit {
+export class RegistrationFormComponent {
+  
+  public registrationFormGroup: FormGroup = new FormGroup(
+    {
+    email: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required, Validators.minLength(8)]),
+    passwordConfirmation: new FormControl('', [Validators.required, Validators.minLength(8)]),
+    }
+  );
 
-  constructor() { }
-
-  ngOnInit(): void {
+  public onRegister(): void {
+    console.log(this.registrationFormGroup.value)
   }
-
 }

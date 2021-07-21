@@ -1,10 +1,25 @@
 <mat-card>
-	<form>
+	<form [formGroup]="registrationFormGroup">
 		<mat-form-field appearance="outline">
-			<mat-label>Registration label</mat-label>
-			<input matInput placeholder="Placeholder">
-			<mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-			<mat-hint>Hint</mat-hint>
+			<mat-label>Email</mat-label>
+			<input matInput placeholder="ex.. john@doe.com" formControlName="email" />
+			<mat-icon matSuffix>person</mat-icon>
 		</mat-form-field>
+
+		<mat-form-field appearance="outline">
+			<mat-label>Password</mat-label>
+			<input matInput placeholder="" formControlName="password" />
+			<mat-icon matSuffix>lock</mat-icon>
+		</mat-form-field>
+
+		<mat-form-field appearance="outline">
+			<mat-label>Confirm password</mat-label>
+			<input matInput placeholder="" formControlName="passwordConfirmation" />
+			<mat-icon matSuffix>lock</mat-icon>
+		</mat-form-field>
+
+		<button mat-raised-button color="primary" (click)="onRegister()"
+			[disabled]="registrationFormGroup.invalid">Register</button>
+
 	</form>
 </mat-card>

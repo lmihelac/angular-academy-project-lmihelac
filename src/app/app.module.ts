@@ -3,6 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+
+
 
 
 
@@ -60,6 +65,10 @@ import { LoginFormComponent } from './pages/login-container/components/login-for
     MatFormFieldModule,
     MatSidenavModule, 
     ReactiveFormsModule,
+    MatInputModule,
+    MatIconModule,
+    MatButtonModule,
+    
   ],
 	providers: [],
 	bootstrap: [AppComponent],
