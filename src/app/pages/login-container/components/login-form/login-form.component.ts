@@ -17,7 +17,7 @@ export class LoginFormComponent {
   );
 
   public onLogin(): void {
-    console.log(this.loginFormGroup.value);
+    //console.log(this.loginFormGroup.value);
     this.loginFormGroup.reset();
 
   }

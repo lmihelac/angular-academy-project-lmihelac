@@ -1,5 +1,12 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+
+export interface RegistrationFormData {
+  email: string;
+  password: string;
+  passwordConfirmation: string;
+}
 
 @Component({
   selector: 'app-registration-form',
@@ -8,6 +15,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RegistrationFormComponent {
+
+  @Output() register: EventEmitter<RegistrationFormData> = new EventEmitter();
+
   
   public registrationFormGroup: FormGroup = new FormGroup(
     {
@@ -18,7 +28,8 @@ export class RegistrationFormComponent {
   );
 
   public onRegister(): void {
-    console.log(this.registrationFormGroup.value);
+    this.register.emit(this.registrationFormGroup.value);
+    //console.log(this.registrationFormGroup.value);
     this.registrationFormGroup.reset();
   }
 }
