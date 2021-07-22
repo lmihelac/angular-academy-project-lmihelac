@@ -1,5 +1,11 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component, ChangeDetectionStrategy, Output,EventEmitter } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+
+export interface LoginFormData {
+  email: string;
+  password: string;
+}
 
 @Component({
   selector: 'app-login-form',
@@ -9,6 +15,8 @@ import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
 })
 export class LoginFormComponent {
 
+  @Output() login: EventEmitter<LoginFormData> = new EventEmitter();
+
   public loginFormGroup: FormGroup = new FormGroup(
     {
     email: new FormControl('',[Validators.required, Validators.email,]),
@@ -17,6 +25,7 @@ export class LoginFormComponent {
   );
 
   public onLogin(): void {
+    this.login.emit(this.loginFormGroup.value);
     //console.log(this.loginFormGroup.value);
     this.loginFormGroup.reset();
 
