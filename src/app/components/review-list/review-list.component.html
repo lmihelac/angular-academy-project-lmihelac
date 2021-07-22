@@ -1,0 +1,11 @@
+<ng-container *ngIf="reviews.length > 0; else elseBlock">
+
+	<ng-container *ngFor="let review of reviews">
+		<app-review-card [text]="review.text" [rating]="review.rating"></app-review-card>
+	</ng-container>
+
+</ng-container>
+
+<ng-template #elseBlock>
+	<h2>Lista je prazna.</h2>
+</ng-template>

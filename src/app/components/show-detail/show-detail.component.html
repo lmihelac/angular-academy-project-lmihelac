@@ -5,8 +5,11 @@
 		<h2>{{ show.title }}</h2>
 	</div>
 
-	<app-rating [averageRating]="show.averageRating"></app-rating>
+	<app-rating [rating]="show.averageRating"></app-rating>
 
 	{{show.description}}
 
 </mat-card>
+<ng-container *ngIf="(review$ | async) as review">
+	<app-review-list [reviews]="review"></app-review-list>
+</ng-container>

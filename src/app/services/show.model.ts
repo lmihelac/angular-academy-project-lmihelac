@@ -8,9 +8,9 @@ public	constructor(rawShow: IRawShow) {
 		this.imageUrl = rawShow.image_url;
 		this.id = rawShow.id;
 	}
-	title: string;
-	description: string;
-	averageRating: number;
-	imageUrl: string;
-	id: string;
+	public title: string;
+	public description: string;
+	public averageRating: number;
+	public imageUrl: string;
+	public id: string;
 }

@@ -10,5 +10,5 @@ import { Show } from 'src/app/services/show.model';
 export class ShowCardComponent {
 	@Input() title: string;
 	@Input() imageUrl: string;
-	@Input() averageRating: number;
+	@Input() rating: number;
 }
