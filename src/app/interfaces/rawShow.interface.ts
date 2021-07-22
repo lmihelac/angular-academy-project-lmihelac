@@ -1,4 +1,3 @@
-
 export interface IRawShow {
 	title: string;
 	description: string;
