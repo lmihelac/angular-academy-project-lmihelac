@@ -32,4 +32,9 @@ export class RegistrationFormComponent {
     //console.log(this.registrationFormGroup.value);
     this.registrationFormGroup.reset();
   }
-}
+
+
+  }
+
+  
+
