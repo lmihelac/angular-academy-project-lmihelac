@@ -1,0 +1,26 @@
+<mat-card>
+	<form [formGroup]="loginFormGroup">
+		<mat-form-field appearance="outline">
+			<mat-label>Email</mat-label>
+			<input matInput placeholder="Placeholder" formControlName="email" type="email" />
+			<mat-icon matPrefix>person</mat-icon>
+			<mat-error *ngIf="loginFormGroup.get('email')?.errors?.required">Email is required</mat-error>
+			<mat-error *ngIf="loginFormGroup.get('email')?.errors?.email">Not a valid email adress</mat-error>
+		</mat-form-field>
+
+
+		<mat-form-field appearance="outline">
+			<mat-label>Password</mat-label>
+			<input matInput placeholder="Placeholder" formControlName="password" type="password" />
+			<mat-icon matPrefix>lock</mat-icon>
+			<mat-error *ngIf="loginFormGroup.get('password')?.errors?.required">Password is required</mat-error>
+			<mat-error *ngIf="loginFormGroup.get('password')?.errors?.minlength">Password must be at least 8 characters long!
+			</mat-error>
+		</mat-form-field>
+
+		<button mat-raised-button color="primary" (click)="onLogin()" [disabled]="loginFormGroup.invalid">Login</button>
+
+		<p>Don’t have an account? <a [routerLink]="'/registration'">Register</a></p>
+
+	</form>
+</mat-card>

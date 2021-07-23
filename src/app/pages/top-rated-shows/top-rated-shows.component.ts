@@ -1,7 +1,7 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Show } from 'src/app/services/show.model';
 import { ShowService } from 'src/app/services/show.service';
-import { Observable, of } from 'rxjs';
+import { Observable, } from 'rxjs';
 
 @Component({
   selector: 'app-top-rated-shows',

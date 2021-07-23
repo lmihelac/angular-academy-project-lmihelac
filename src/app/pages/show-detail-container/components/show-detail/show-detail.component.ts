@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/internal/operators';
 import { ReviewService } from 'src/app/services/review.service';
-import { IReview } from 'src/app/interfaces/review.interface';
+
 
 @Component({
   selector: 'app-show-detail',

@@ -1,0 +1,35 @@
+<mat-card>
+	<form [formGroup]="registrationFormGroup">
+		<mat-form-field appearance="outline">
+			<mat-label>Email</mat-label>
+			<input matInput placeholder="ex.. john@doe.com" formControlName="email" type="email" />
+			<mat-icon matPrefix>person</mat-icon>
+			<mat-error *ngIf="registrationFormGroup.get('email')?.errors?.required">Email is required</mat-error>
+			<mat-error *ngIf="registrationFormGroup.get('email')?.errors?.email">Not a valid email adress</mat-error>
+		</mat-form-field>
+
+		<mat-form-field appearance="outline">
+			<mat-label>Password</mat-label>
+			<input matInput placeholder="" formControlName="password" type="password" />
+			<mat-icon matPrefix>lock</mat-icon>
+			<mat-error *ngIf="registrationFormGroup.get('password')?.errors?.required">Password is required</mat-error>
+			<mat-error *ngIf="registrationFormGroup.get('password')?.errors?.minlength">Password must be at least 8 characters
+				long!</mat-error>
+		</mat-form-field>
+
+		<mat-form-field appearance="outline">
+			<mat-label>Confirm password</mat-label>
+			<input matInput placeholder="" formControlName="passwordConfirmation" type="password" />
+			<mat-icon matPrefix>lock</mat-icon>
+			<mat-error *ngIf="registrationFormGroup.get('password')?.errors?.required">Password is required</mat-error>
+			<mat-error *ngIf="registrationFormGroup.get('password')?.errors?.minlength">Password must be at least 8 characters
+				long!</mat-error>
+		</mat-form-field>
+
+		<button mat-raised-button color="primary" (click)="onRegister()"
+			[disabled]="registrationFormGroup.invalid">Register</button>
+
+		<p>Already have an account? <a [routerLink]="'/login'">Login</a></p>
+
+	</form>
+</mat-card>
