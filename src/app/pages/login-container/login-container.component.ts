@@ -1,3 +1,4 @@
+import { HttpResponse } from '@angular/common/http';
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
@@ -22,9 +23,9 @@ export class LoginContainerComponent {
       finalize(() => {
         this.isLoading$.next(false);
       }),
-    ).subscribe((loginFormData: LoginFormData) => {
-      console.log(loginFormData); //log server responsea
-      this.router.navigate(['']);
+    ).subscribe((response: HttpResponse<any>) => {
+
+      //this.router.navigate(['']);
     });
   }
 
