@@ -6,7 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 
@@ -32,6 +32,7 @@ import { RegistrationContainerComponent } from './pages/registration-container/r
 import { RegistrationFormComponent } from './pages/registration-container/components/registration-form/registration-form.component';
 import { LoginContainerComponent } from './pages/login-container/login-container.component';
 import { LoginFormComponent } from './pages/login-container/components/login-form/login-form.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 
 @NgModule({
@@ -72,7 +73,13 @@ import { LoginFormComponent } from './pages/login-container/components/login-for
     ReactiveFormsModule,
     
   ],
-	providers: [],
+	providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}

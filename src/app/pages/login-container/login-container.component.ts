@@ -23,9 +23,9 @@ export class LoginContainerComponent {
       finalize(() => {
         this.isLoading$.next(false);
       }),
-    ).subscribe((response: HttpResponse<any>) => {
+    ).subscribe(() => {
 
-      //this.router.navigate(['']);
+      this.router.navigate(['']);
     });
   }
 

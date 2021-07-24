@@ -33,7 +33,7 @@ export class AuthService {
           const uid: string | null = response.headers.get('uid');
 
           console.log(token, client, uid);
-          
+
           if(token && client && uid) {
             this.saveAuthData({token, client, uid});
           }
@@ -45,4 +45,10 @@ export class AuthService {
     private saveAuthData(authData : AuthData): void {
       this.storage.add(this.authDataKey, authData);
     }
+
+    public getAuthData(): AuthData | null {
+      return this.storage.get(this.authDataKey);
+    }
+
+
 }
