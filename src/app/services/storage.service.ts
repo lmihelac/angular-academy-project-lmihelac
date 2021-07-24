@@ -4,6 +4,22 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class StorageService {
+  public add(key: string, data: any): void {
+    localStorage.setItem(key, JSON.stringify(data));
+  }
 
-  constructor() { }
+  public get(key: string): any {
+    const data: string | null = localStorage.getItem(key)
+
+    if(data) {
+      return JSON.parse(data)
+    }
+
+    return null;
+}
+
+
+  public remove(key: string): void {
+    localStorage.removeItem(key);
+  }
 }

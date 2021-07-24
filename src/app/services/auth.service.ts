@@ -5,13 +5,15 @@ import { RegistrationFormData } from '../pages/registration-container/components
 import { LoginFormData } from '../pages/login-container/components/login-form/login-form.component';
 import { tap } from 'rxjs/operators';
 import { AuthData } from '../interfaces/auth-data.interface';
+import { StorageService } from './storage.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  private readonly authDataKey = 'authData';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private storage: StorageService) {}
 
   public onRegister({email, password, passwordConfirmation}: RegistrationFormData): Observable<RegistrationFormData> {
   return this.http.post<RegistrationFormData>('https://tv-shows.infinum.academy/users', {
@@ -25,15 +27,22 @@ export class AuthService {
       observe: 'response'}).pipe(
         tap((response: HttpResponse<any>) => { //trebalo bi typeat sa login responseom
           console.log(response); //log server responsea
+
           const token: string | null = response.headers.get('access-token');
           const client: string | null = response.headers.get('client');
           const uid: string | null = response.headers.get('uid');
+
           console.log(token, client, uid);
+          
+          if(token && client && uid) {
+            this.saveAuthData({token, client, uid});
+          }
         })
       );
     }
 
-    private saveAuthData(authData : AuthData): void {
 
+    private saveAuthData(authData : AuthData): void {
+      this.storage.add(this.authDataKey, authData);
     }
 }
