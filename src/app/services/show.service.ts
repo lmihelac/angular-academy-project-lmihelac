@@ -1,11 +1,9 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { delay, map } from 'rxjs/internal/operators';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/internal/operators';
 import { IRawShow } from '../interfaces/rawShow.interface';
-import { AuthService } from './auth.service';
 import { Show } from './show.model';
-import { StorageService } from './storage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,21 +13,24 @@ export class ShowService {
 
 
   public getShows(): Observable<Array<Show>> {
-
-		return this.http.get<{body: { shows: Array<IRawShow> } }>('https://tv-shows.infinum.academy/shows/', ).pipe(
+		return this.http.get<{body: { shows: Array<IRawShow> } }>('https://tv-shows.infinum.academy/shows').pipe(
 			map((response) => {
 				return response.body.shows.map((rawShowData: IRawShow) => new Show(rawShowData));
 			}),
 		);
-  } //funkcija za fetchanje svih showova
+  } 
 
    public getTopRatedShows(): Observable<Array<Show>> {
-    return this.getShows().pipe(map((shows) => shows.filter((show: Show)=> show.averageRating > 4)));
-		}; //f-ja za fetchanje showova sa ratingom > 4
+    return this.http.get<{body:{ shows: Array<IRawShow>}}>('https://tv-shows.infinum.academy/shows/top_rated').pipe(
+			map((response) => {
+				return response.body.shows.map((rawShowData: IRawShow) => new Show(rawShowData));
+			})
+		)
+		}; 
 
   public getShow(id: string): Observable<Show | null> {
     return this.getShows().pipe(map((shows) => shows.find((show: Show)=> show.id === id) || null));
-    }; //zasto dohvacamo sve pa filtriramo?
+    }; //još treba ovo napraviti
   
 }
 

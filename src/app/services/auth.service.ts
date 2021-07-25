@@ -34,7 +34,9 @@ export class AuthService {
           const token: string | null = response.headers.get('access-token');
           const client: string | null = response.headers.get('client');
           const uid: string | null = response.headers.get('uid');
-          console.log(token, client, uid);
+          console.log({'token': token, 
+          'client' : client, 
+          'uid': uid});
 
           if(token && client && uid) {
             this.saveAuthData({token, client, uid});
@@ -51,7 +53,7 @@ export class AuthService {
 
     public getAuthData(): AuthData | null {
       return this.storage.get(this.authDataKey);
-      console.log(this.authDataKey);
+      //console.log(this.authDataKey);
     }
 
     public logOut(): void {

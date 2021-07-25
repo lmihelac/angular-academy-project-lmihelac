@@ -9,10 +9,10 @@ export class StorageService {
   }
 
   public get(key: string): any {
-    const data: string | null = localStorage.getItem(key)
+    const data: string | null = localStorage.getItem(key);
 
     if(data) {
-      return JSON.parse(data)
+      return JSON.parse(data);
     }
 
     return null;

@@ -1,7 +1,7 @@
 import { HttpResponse } from '@angular/common/http';
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 import { AuthService } from 'src/app/services/auth.service';
 import { LoginFormData } from './components/login-form/login-form.component';

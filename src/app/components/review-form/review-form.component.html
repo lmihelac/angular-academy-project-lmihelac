@@ -1,0 +1,21 @@
+<mat-card>
+	<form [formGroup]="reviewFormGroup">
+		<mat-form-field appearance="outline">
+			<mat-label>Comment</mat-label>
+			<input matInput placeholder="Placeholder" formControlName="comment" type="text" />
+			<mat-error *ngIf="reviewFFormGroup.get('email')?.errors?.required">Comment is required</mat-error>
+		</mat-form-field>
+
+
+		<mat-form-field appearance="outline">
+			<mat-label>Password</mat-label>
+			<input matInput placeholder="Placeholder" formControlName="rating" type="number" />
+			<mat-error *ngIf="reviewFFormGroup.get('password')?.errors?.required">Rating is required</mat-error>
+		</mat-form-field>
+
+		<button mat-raised-button color="primary" (click)="" [disabled]="reviewFormGroup.invalid">Add comment</button>
+
+
+
+	</form>
+</mat-card>

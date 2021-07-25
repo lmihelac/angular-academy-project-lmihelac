@@ -34,6 +34,7 @@ import { LoginContainerComponent } from './pages/login-container/login-container
 import { LoginFormComponent } from './pages/login-container/components/login-form/login-form.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { AuthErrorInterceptor } from './interceptors/auth-error.interceptor';
+import { ReviewFormComponent } from './components/review-form/review-form.component';
 
 
 @NgModule({
@@ -57,6 +58,7 @@ import { AuthErrorInterceptor } from './interceptors/auth-error.interceptor';
     ShowDetailComponent,
     ShowDetailContainerComponent,
     TopRatedShowsComponent,
+    ReviewFormComponent,
   ],
 	imports: 
   [
