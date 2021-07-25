@@ -16,11 +16,11 @@ export class ShowService {
 
   public getShows(): Observable<Array<Show>> {
 
-		return this.http.get<{body: { shows: Array<IRawShow> } }>('https://tv-shows.infinum.academy/api/v1/docs/index.html#tag/Tv-Shows/paths/~1shows/get', ).pipe(
+		return this.http.get<{body: { shows: Array<IRawShow> } }>('https://tv-shows.infinum.academy/shows/', ).pipe(
 			map((response) => {
 				return response.body.shows.map((rawShowData: IRawShow) => new Show(rawShowData));
-			})
-		)
+			}),
+		);
   } //funkcija za fetchanje svih showova
 
    public getTopRatedShows(): Observable<Array<Show>> {

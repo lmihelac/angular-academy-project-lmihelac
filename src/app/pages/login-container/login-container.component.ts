@@ -1,7 +1,7 @@
 import { HttpResponse } from '@angular/common/http';
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 import { AuthService } from 'src/app/services/auth.service';
 import { LoginFormData } from './components/login-form/login-form.component';
@@ -13,16 +13,14 @@ import { LoginFormData } from './components/login-form/login-form.component';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginContainerComponent {
-  public isLoading$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  public isLoading$: Subject<boolean> = new Subject();
 
   constructor(private authService: AuthService, private router: Router) {}
 
-  public onLogin(loginFormData: LoginFormData): void {
+  public onLogin(loginData: LoginFormData): void {
     this.isLoading$.next(true);
-    this.authService.logIn(loginFormData).pipe(
-      finalize(() => {
-        this.isLoading$.next(false);
-      }),
+    this.authService.logIn(loginData).pipe(
+      finalize(() => this.isLoading$.next(false)),
     ).subscribe(() => {
 
       this.router.navigate(['']);
