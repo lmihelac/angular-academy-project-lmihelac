@@ -17,8 +17,8 @@ export class AuthService {
 
   constructor(private http: HttpClient, private storage: StorageService) {}
 
-  public onRegister({email, password, passwordConfirmation}: RegistrationFormData): Observable<RegistrationFormData> {
-  return this.http.post<RegistrationFormData>('https://tv-shows.infinum.academy/users', {
+  public register({email, password, passwordConfirmation}: RegistrationFormData): Observable<RegistrationFormData> {
+  return this.http.post<RegistrationFormData>('https://tv-shows.infinum.academy/api/v1/docs/#tag/Registrations/paths/~1users/post', {
     email,
     password,
     password_confirmation : passwordConfirmation,
@@ -27,16 +27,16 @@ export class AuthService {
 
 
   public logIn(loginData: LoginFormData): Observable<any> {
-    return this.http.post<HttpResponse<any>>('https://tv-shows.infinum.academy/users/sign_in', loginData, { 
+    return this.http.post<HttpResponse<any>>('https://tv-shows.infinum.academy/api/v1/docs/#tag/Sessions/paths/~1users~1sign_in/post', loginData, { 
       observe: 'response'}).pipe(
         tap((response: HttpResponse<any>) => { //trebalo bi typeat sa login responseom
-         // console.log(response); log server responsea
+          console.log(response); //log server responsea
 
           const token: string | null = response.headers.get('access-token');
           const client: string | null = response.headers.get('client');
           const uid: string | null = response.headers.get('uid');
 
-          //console.log(token, client, uid);
+          console.log(token, client, uid);
 
           if(token && client && uid) {
             this.saveAuthData({token, client, uid});

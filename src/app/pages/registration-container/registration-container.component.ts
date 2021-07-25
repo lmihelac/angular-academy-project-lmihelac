@@ -16,9 +16,9 @@ export class RegistrationContainerComponent {
 
   constructor(private authService: AuthService, private router: Router) {}
 
-  public onRegister(registrationFormData: RegistrationFormData): void {
+  public register(registrationFormData: RegistrationFormData): void {
     this.isLoading$.next(true);
-    this.authService.onRegister(registrationFormData).pipe(
+    this.authService.register(registrationFormData).pipe(
       finalize(() => {
         this.isLoading$.next(false);
       }),

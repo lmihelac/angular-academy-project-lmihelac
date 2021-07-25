@@ -24,7 +24,7 @@ const routes: Routes =
 	{ path: 'show/:id', component: ShowDetailContainerComponent},
 	{ path: 'my-profile', component: MyProfileComponent },
 	],
-	canActivate: [AppGuard]
+	//canActivate: [AppGuard]
 },
 
 { 
