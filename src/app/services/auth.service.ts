@@ -24,7 +24,9 @@ export class AuthService {
     password_confirmation : passwordConfirmation,
   })
   }
-  public onLogin(loginData: LoginFormData): Observable<any> {
+
+
+  public logIn(loginData: LoginFormData): Observable<any> {
     return this.http.post<HttpResponse<any>>('https://tv-shows.infinum.academy/users/sign_in', loginData, { 
       observe: 'response'}).pipe(
         tap((response: HttpResponse<any>) => { //trebalo bi typeat sa login responseom
@@ -53,5 +55,9 @@ export class AuthService {
       return this.storage.get(this.authDataKey);
     }
 
+    public logOut(): void {
+      this.storage.remove(this.authDataKey);
+      this.isLoggedIn$.next(false);
+    }
 
 }

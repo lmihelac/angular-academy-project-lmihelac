@@ -19,12 +19,12 @@ const routes: Routes =
 	path: '', 
 	component: MainLayoutComponentComponent ,
 	children: [
-	{ path: '', component: AllShowsContainerComponent, /*canActivate: [AppGuard]*/ },
+	{ path: '', component: AllShowsContainerComponent,  },
 	{ path: 'top-rated', component: TopRatedShowsComponent },
 	{ path: 'show/:id', component: ShowDetailContainerComponent},
 	{ path: 'my-profile', component: MyProfileComponent },
 	],
-	/*canActivate: [AppGuard]*/
+	canActivate: [AppGuard]
 },
 
 { 

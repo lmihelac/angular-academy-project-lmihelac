@@ -16,8 +16,8 @@ export class ShowService {
 
   public getShows(): Observable<Array<Show>> {
 		let headers: HttpHeaders = new HttpHeaders();
-		headers = headers.append('token', '');
-		headers = headers.append('client', '');
+		headers = headers.append('token', '//tu ide header'); //kako se piše header?
+		headers = headers.append('client', '//tu ide header');
 		headers = headers.append('uid', '');
 		console.log(headers)
 		return this.http.get<{body: { shows: Array<IRawShow> } }>('https://tv-shows.infinum.academy/api/v1/docs/index.html#tag/Tv-Shows/paths/~1shows/gets', {
