@@ -11,27 +11,20 @@ import { TopRatedShowsComponent } from './pages/top-rated-shows/top-rated-shows.
 import { FormLayoutComponent } from './components/form-layout/form-layout.component';
 import { RegistrationContainerComponent } from './pages/registration-container/registration-container.component';
 import { LoginContainerComponent } from './pages/login-container/login-container.component';
+import { AppGuard } from './app.guard';
 
 const routes: Routes = 
 [
 { 
 	path: '', 
 	component: MainLayoutComponentComponent ,
-	children: 
-	[
-	{
-		path: '', component: AllShowsContainerComponent
-	},
-	{
-		path: 'top-rated', component: TopRatedShowsComponent
-	},
-	{
-		path: 'show/:id', component: ShowDetailContainerComponent
-	},
-	{
-		path: 'my-profile', component: MyProfileComponent
-	},
-	]
+	children: [
+	{ path: '', component: AllShowsContainerComponent, /*canActivate: [AppGuard]*/ },
+	{ path: 'top-rated', component: TopRatedShowsComponent },
+	{ path: 'show/:id', component: ShowDetailContainerComponent},
+	{ path: 'my-profile', component: MyProfileComponent },
+	],
+	/*canActivate: [AppGuard]*/
 },
 
 { 
