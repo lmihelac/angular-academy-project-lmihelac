@@ -1,4 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Output } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-review-form',
@@ -6,8 +7,15 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./review-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ReviewFormComponent implements OnInit {
+export class ReviewFormComponent  {
 
+
+  public reviewFormGroup: FormGroup = new FormGroup(
+    {
+    comment: new FormControl('',[Validators.required]),
+    rating: new FormControl('', [Validators.required]),
+    }
+  );
 
 
 }
