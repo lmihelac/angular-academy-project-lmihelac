@@ -13,17 +13,17 @@ export class ShowService {
 
 
   public getShows(): Observable<Array<Show>> {
-		return this.http.get<{body: { shows: Array<IRawShow> } }>('https://tv-shows.infinum.academy/shows').pipe(
+		return this.http.get<{ shows: Array<IRawShow> } >('https://tv-shows.infinum.academy/shows').pipe(
 			map((response) => {
-				return response.body.shows.map((rawShowData: IRawShow) => new Show(rawShowData));
+				return response.shows.map((rawShowData: IRawShow) => new Show(rawShowData));
 			}),
 		);
   } 
 
    public getTopRatedShows(): Observable<Array<Show>> {
-    return this.http.get<{body:{ shows: Array<IRawShow>}}>('https://tv-shows.infinum.academy/shows/top_rated').pipe(
+    return this.http.get<{ shows: Array<IRawShow>}>('https://tv-shows.infinum.academy/shows/top_rated').pipe(
 			map((response) => {
-				return response.body.shows.map((rawShowData: IRawShow) => new Show(rawShowData));
+				return response.shows.map((rawShowData: IRawShow) => new Show(rawShowData));
 			})
 		)
 		}; 

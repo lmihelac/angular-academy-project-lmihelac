@@ -24,9 +24,9 @@ export class AuthInterceptor implements HttpInterceptor {
       console.log('authData postoji')
       finalRequest = request.clone({
         headers: new HttpHeaders({
-          token: authData.token,
-          client: authData.client,
-          uid: authData.uid,
+          'access-token': authData.token,
+          'client': authData.client,
+          'uid': authData.uid,
         })
       })
     }
