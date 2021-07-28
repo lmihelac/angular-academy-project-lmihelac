@@ -30,7 +30,7 @@ export class ShowService {
 
   public getShow(id: string): Observable<Show | null> {
     return this.getShows().pipe(map((shows) => shows.find((show: Show)=> show.id === id) || null));
-    }; //još treba ovo napraviti
+    }; 
   
 }
 
