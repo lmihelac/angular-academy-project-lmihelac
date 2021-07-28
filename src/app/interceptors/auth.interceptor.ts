@@ -21,7 +21,6 @@ export class AuthInterceptor implements HttpInterceptor {
     let finalRequest: HttpRequest<unknown> = request;
 
     if (authData) {
-      console.log('authData postoji')
       finalRequest = request.clone({
         headers: new HttpHeaders({
           'access-token': authData.token,
@@ -31,7 +30,6 @@ export class AuthInterceptor implements HttpInterceptor {
       })
     }
 
-    console.log('cijeli request', finalRequest);
     //console.log(request.headers.get('token'),request.headers.get('client'));
     //console.log(finalRequest.headers.get('token'));
 
