@@ -16,6 +16,7 @@ export class ShowService {
 		return this.http.get<{ shows: Array<IRawShow> } >('https://tv-shows.infinum.academy/shows').pipe(
 			map((response) => {
 				return response.shows.map((rawShowData: IRawShow) => new Show(rawShowData));
+
 			}),
 		);
   } 

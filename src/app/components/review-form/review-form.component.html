@@ -2,14 +2,14 @@
 	<form [formGroup]="reviewFormGroup">
 		<mat-form-field appearance="outline">
 			<mat-label>Comment</mat-label>
-			<input matInput placeholder="Placeholder" formControlName="comment" type="text" />
+			<input matInput placeholder="Write your review here" formControlName="comment" type="text" />
 			<mat-error *ngIf="reviewFormGroup.get('comment')?.errors?.required">Comment is required</mat-error>
 		</mat-form-field>
 
 
 		<mat-form-field appearance="outline">
-			<mat-label>Password</mat-label>
-			<input matInput placeholder="Placeholder" formControlName="rating" type="number" />
+			<mat-label>Rating</mat-label>
+			<input matInput placeholder="Rating" formControlName="rating" type="number" />
 			<mat-error *ngIf="reviewFormGroup.get('rating')?.errors?.required">Rating is required</mat-error>
 		</mat-form-field>
 

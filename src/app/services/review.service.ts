@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { delay, map } from 'rxjs/internal/operators';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/internal/operators';
 import { IReview } from '../interfaces/review.interface';
 import { Review } from './review.model';
 
@@ -25,7 +25,7 @@ export class ReviewService {
 
   public getShowReviews(id: string): Observable<Array<Review>> {
     return this.getReviews().pipe
-    (map((reviews) => reviews.filter((review: Review)=> review.showId === id) || null));
+    (map((reviews) => reviews.filter((review: Review)=> review.show_id === id) || null));
     }; 
 
 
