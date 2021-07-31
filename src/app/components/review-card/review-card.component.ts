@@ -9,6 +9,6 @@ import { Review } from 'src/app/services/review.model';
 })
 export class ReviewCardComponent  {
 
-  @Input() text: string;
+  @Input() comment: string;
 	@Input() rating: number;
 }

@@ -3,7 +3,7 @@
 </ng-container>
 
 <ng-container>
-	<app-review-form></app-review-form>
+	<app-review-form (post)="onPost($event)"></app-review-form>
 </ng-container>
 
 <ng-container *ngIf="(review$ | async) as review">

@@ -1,5 +1,5 @@
 <mat-card>
-	<form [formGroup]="reviewFormGroup">
+	<form [formGroup]="reviewFormGroup" (ngSubmit)="onPost()">
 		<mat-form-field appearance="outline">
 			<mat-label>Comment</mat-label>
 			<input matInput placeholder="Write your review here" formControlName="comment" type="text" />
@@ -9,11 +9,11 @@
 
 		<mat-form-field appearance="outline">
 			<mat-label>Rating</mat-label>
-			<input matInput placeholder="Rating" formControlName="rating" type="number" />
+			<input matInput placeholder="Rating" formControlName="rating" type="number" min="1" max="5" />
 			<mat-error *ngIf="reviewFormGroup.get('rating')?.errors?.required">Rating is required</mat-error>
 		</mat-form-field>
 
-		<button mat-raised-button color="primary" (click)="''" [disabled]="reviewFormGroup.invalid">Add comment</button>
+		<button mat-raised-button color="primary" (click)="''" [disabled]="reviewFormGroup.invalid">Post comment</button>
 
 
 

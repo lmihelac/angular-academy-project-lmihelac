@@ -42,5 +42,9 @@ export class ShowDetailContainerComponent  {
 		})
 	);
 
+	public onPost(review: Review) {
+		console.log(review);
+	}
+
 
 }

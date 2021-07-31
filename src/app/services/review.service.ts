@@ -24,4 +24,8 @@ export class ReviewService {
 		);
   } 
 
+  public onPost(review: Review): Observable<Review> {
+    return this.http.post<Review>('https://tv-shows.infinum.academy/reviews/', review,);
+  }
+
 }
