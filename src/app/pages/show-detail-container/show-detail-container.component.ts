@@ -2,8 +2,10 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Show } from 'src/app/services/show.model';
 import { ShowService } from 'src/app/services/show.service';
-import { Observable, of } from 'rxjs';
+import { merge, Observable, of } from 'rxjs';
 import { switchMap, map } from 'rxjs/internal/operators';
+import { ReviewService } from 'src/app/services/review.service';
+import { Review } from 'src/app/services/review.model';
 
 
 @Component({
@@ -14,7 +16,7 @@ import { switchMap, map } from 'rxjs/internal/operators';
 })
 export class ShowDetailContainerComponent  {
 
-  constructor(private route: ActivatedRoute, private showService: ShowService) { }
+  constructor(private route: ActivatedRoute, private showService: ShowService, private reviewService: ReviewService) { }
 
   public show$: Observable<Show | null> = this.route.paramMap.pipe(
 		map((paramMap)=> {return paramMap.get('id')}),
@@ -24,6 +26,19 @@ export class ShowDetailContainerComponent  {
 			}
 
 			return of(null);
+		})
+	);
+
+
+  public review$: Observable<Array<Review>> = this.route.paramMap.pipe(
+		switchMap((paramMap) => {
+			const id: string | null = paramMap.get('id');
+
+			if (id) {
+				return this.reviewService.getReviews(id);
+			}
+				return of([]);
+				
 		})
 	);
 

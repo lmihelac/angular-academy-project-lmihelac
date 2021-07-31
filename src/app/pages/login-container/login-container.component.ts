@@ -22,7 +22,6 @@ export class LoginContainerComponent {
     this.authService.logIn(loginData).pipe(
       finalize(() => this.isLoading$.next(false)),
     ).subscribe(() => {
-
       this.router.navigate(['']);
     });
   }

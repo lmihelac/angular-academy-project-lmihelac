@@ -10,7 +10,3 @@
 	{{show.description}}
 
 </mat-card>
-<ng-container *ngIf="(review$ | async) as review">
-	<app-review-list [reviews]="review"></app-review-list>
-</ng-container>
-<app-review-form></app-review-form>

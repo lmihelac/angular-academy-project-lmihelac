@@ -6,7 +6,6 @@ import { MainLayoutComponentComponent } from './components/main-layout-component
 import { MyProfileComponent } from './pages/my-profile/my-profile.component';
 
 import { ShowDetailContainerComponent } from './pages/show-detail-container/show-detail-container.component';
-import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { TopRatedShowsComponent } from './pages/top-rated-shows/top-rated-shows.component';
 import { FormLayoutComponent } from './components/form-layout/form-layout.component';
 import { RegistrationContainerComponent } from './pages/registration-container/registration-container.component';
@@ -33,7 +32,7 @@ const routes: Routes =
 	children: 
 	[
 	{
-		path: 'registration', component: RegistrationContainerComponent
+		path: 'register', component: RegistrationContainerComponent
 	},
 	{
 		path: 'login', component: LoginContainerComponent
