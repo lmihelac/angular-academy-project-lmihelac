@@ -3,9 +3,11 @@ import { ActivatedRoute } from '@angular/router';
 import { Show } from 'src/app/services/show.model';
 import { ShowService } from 'src/app/services/show.service';
 import { merge, Observable, of } from 'rxjs';
-import { switchMap, map } from 'rxjs/internal/operators';
+import { switchMap, map, subscribeOn } from 'rxjs/internal/operators';
 import { ReviewService } from 'src/app/services/review.service';
 import { Review } from 'src/app/services/review.model';
+import { IReview } from 'src/app/interfaces/review.interface';
+import { ReviewFormData } from 'src/app/components/review-form/review-form.component';
 
 
 @Component({
@@ -33,18 +35,27 @@ export class ShowDetailContainerComponent  {
   public review$: Observable<Array<Review>> = this.route.paramMap.pipe(
 		switchMap((paramMap) => {
 			const id: string | null = paramMap.get('id');
-
 			if (id) {
 				return this.reviewService.getReviews(id);
+				
 			}
 				return of([]);
 				
 		})
 	);
 
-	public onPost(review: Review) {
-		console.log(review);
-	}
+
+	public onReviewAdd(reviewFormData: ReviewFormData): void {
+		const id: string | null = this.route.snapshot.paramMap.get('id');//ovo se aktivira
+		console.log(id);
+    this.reviewService.onReviewAdd(reviewFormData, id)
+		console.log(this.reviewService.onReviewAdd(reviewFormData, id))
+		//console.log(reviewFormData)
+
+  }
+
+
+
 
 
 }
