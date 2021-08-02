@@ -1,9 +1,8 @@
 import { Component, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Observable } from 'rxjs';
-import { Review } from 'src/app/services/review.model';
 
-export interface ReviewFormData {
+
+export interface IReviewFormData {
   comment: string;
   rating: number;
 }
@@ -15,7 +14,7 @@ export interface ReviewFormData {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ReviewFormComponent  {
-  @Output() addReview: EventEmitter<ReviewFormData> = new EventEmitter(); //typeat ovo
+  @Output() addReview: EventEmitter<IReviewFormData> = new EventEmitter(); //typeat ovo
 
 
   public reviewFormGroup: FormGroup = new FormGroup(
@@ -28,7 +27,6 @@ export class ReviewFormComponent  {
 
 	public onAddReview(): void{
     this.addReview.emit(this.reviewFormGroup.value);
-    console.log(this.reviewFormGroup.value);
     this.reviewFormGroup.reset();
 }
 

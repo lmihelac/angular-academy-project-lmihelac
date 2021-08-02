@@ -6,8 +6,7 @@ import { merge, Observable, of } from 'rxjs';
 import { switchMap, map, subscribeOn } from 'rxjs/internal/operators';
 import { ReviewService } from 'src/app/services/review.service';
 import { Review } from 'src/app/services/review.model';
-import { IReview } from 'src/app/interfaces/review.interface';
-import { ReviewFormData } from 'src/app/components/review-form/review-form.component';
+import { IReviewFormData} from 'src/app/components/review-form/review-form.component';
 
 
 @Component({
@@ -45,12 +44,14 @@ export class ShowDetailContainerComponent  {
 	);
 
 
-	public onReviewAdd(reviewFormData: ReviewFormData): void {
-		const id: string | null = this.route.snapshot.paramMap.get('id');//ovo se aktivira
+	public onReviewAdd(reviewFormData: IReviewFormData): void {
+		const id: string | null  = this.route.snapshot.paramMap.get('id');//ovo se aktivira
+		if(!id){
+			return
+		}
 		console.log(id);
     this.reviewService.onReviewAdd(reviewFormData, id)
-		console.log(this.reviewService.onReviewAdd(reviewFormData, id))
-		//console.log(reviewFormData)
+		// console.log(this.reviewService.onReviewAdd(reviewFormData, id))
 
   }
 

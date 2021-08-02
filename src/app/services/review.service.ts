@@ -1,9 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpRequest, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Data } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/internal/operators';
-import { ReviewFormData } from '../components/review-form/review-form.component';
+import { IReviewFormData } from '../components/review-form/review-form.component';
 import { IReview } from '../interfaces/review.interface';
 import { Review } from './review.model';
 
@@ -27,9 +27,11 @@ export class ReviewService {
   } 
 
 
-  public onReviewAdd(data: any, id: string | null):Observable<any> {
-    console.log(data, id);
-		return this.http.post<any>('https://tv-shows.infinum.academy/reviews', {data,id}) //u grubo kako bi trebalo izgledat
+  public onReviewAdd(reviewFormData: IReviewFormData, id: string):Observable<any> {
+    console.log(reviewFormData, id);
+    console.log({comment: reviewFormData.comment, rating: reviewFormData.rating, show_id: id});
+		return this.http.post<any>('https://tv-shows.infinum.academy/reviews', {comment: reviewFormData.comment, rating: reviewFormData.rating, show_id: id})
+     
 	}
 
 
