@@ -1,7 +1,15 @@
 <mat-card class="show-card">
 	<img class="image" [src]="imageUrl" />
 	<div class="info">
-		<h2>{{ title }}</h2>
-		<app-rating [rating]="rating"></app-rating>
+		<div class="title">
+
+			{{ title }}
+		</div>
+		<div class="rating">
+
+			<app-rating [rating]="rating"></app-rating>
+		</div>
+
+
 	</div>
 </mat-card>
