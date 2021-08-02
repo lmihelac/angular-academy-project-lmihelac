@@ -29,9 +29,13 @@ export class ShowService {
 		)
 		}; 
 
-  public getShow(id: string): Observable<Show | null> {
-    return this.getShows().pipe(map((shows) => shows.find((show: Show)=> show.id === id) || null));
-    }; 
+  public getShow(id: string): Observable<Show> {
+		return this.http.get<{show: IRawShow}>(`https://tv-shows.infinum.academy/shows/${id}`).pipe(
+			map((response) => {
+				return new Show(response.show);
+			})
+		)
+	}; 
   
 }
 
