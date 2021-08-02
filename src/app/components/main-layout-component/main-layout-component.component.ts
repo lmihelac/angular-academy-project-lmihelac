@@ -6,8 +6,5 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 	styleUrls: ['./main-layout-component.component.scss'],
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MainLayoutComponentComponent implements OnInit {
-	constructor() {}
+export class MainLayoutComponentComponent {}
 
-	ngOnInit(): void {}
-}

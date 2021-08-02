@@ -35,6 +35,7 @@ import { LoginFormComponent } from './pages/login-container/components/login-for
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { AuthErrorInterceptor } from './interceptors/auth-error.interceptor';
 import { ReviewFormComponent } from './components/review-form/review-form.component';
+import { LogoComponent } from './components/logo/logo.component';
 
 
 @NgModule({
@@ -59,6 +60,7 @@ import { ReviewFormComponent } from './components/review-form/review-form.compon
     ShowDetailContainerComponent,
     TopRatedShowsComponent,
     ReviewFormComponent,
+    LogoComponent,
   ],
 	imports: 
   [
