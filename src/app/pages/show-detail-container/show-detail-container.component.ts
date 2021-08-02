@@ -45,12 +45,12 @@ export class ShowDetailContainerComponent  {
 
 
 	public onReviewAdd(reviewFormData: IReviewFormData): void {
-		const id: string | null  = this.route.snapshot.paramMap.get('id');//ovo se aktivira
+		const id: string | null  = this.route.snapshot.paramMap.get('id');
 		if(!id){
 			return
 		}
 		console.log(id);
-    this.reviewService.onReviewAdd(reviewFormData, id)
+    this.reviewService.onReviewAdd(reviewFormData, id).subscribe()
 		// console.log(this.reviewService.onReviewAdd(reviewFormData, id))
 
   }
