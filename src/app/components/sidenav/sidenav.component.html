@@ -2,7 +2,7 @@
 
 	<li class="list-item" *ngFor="let link of links">
 		<a class="link" [routerLink]="link.url" routerLinkActive="active"
-			[routerLinkActiveOptions]="{ exact: true}">{{link.title}}</a>
+			[routerLinkActiveOptions]="{ exact: true }">{{link.title}}</a>
 	</li>
 	<button mat-stroked-button (click)="logOut()">Log out</button>
 

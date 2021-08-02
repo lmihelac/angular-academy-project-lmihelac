@@ -1,6 +1,5 @@
-import { HttpClient, HttpRequest, HttpResponse } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Data } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/internal/operators';
 import { IReviewFormData } from '../components/review-form/review-form.component';

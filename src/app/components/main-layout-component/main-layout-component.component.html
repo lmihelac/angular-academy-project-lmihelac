@@ -1,5 +1,5 @@
 <mat-drawer-container class="main-layout">
-	<mat-drawer mode="over" position="end" #drawer>
+	<mat-drawer class="mobile" [mode]="isMobile ? 'over' : 'side'  " position="end" #drawer>
 		<button mat-icon-button (click)="drawer.close()">
 			<mat-icon>close</mat-icon>
 		</button>
