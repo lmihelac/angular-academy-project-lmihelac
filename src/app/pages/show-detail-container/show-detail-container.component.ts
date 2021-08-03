@@ -76,8 +76,6 @@ export class ShowDetailContainerComponent  {
 		}
 		console.log(id);
     this.reviewService.onReviewAdd(reviewFormData, id).subscribe()
-		// console.log(this.reviewService.onReviewAdd(reviewFormData, id))
-
   }
 
 

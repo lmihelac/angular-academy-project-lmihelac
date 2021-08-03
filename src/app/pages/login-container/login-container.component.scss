@@ -1,0 +1,9 @@
+@use 'utils/colors';
+
+* {
+	background-color: colors.$purple;
+}
+
+.login-form {
+	border-radius: 24px;
+}

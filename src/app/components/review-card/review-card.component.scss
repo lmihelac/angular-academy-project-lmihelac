@@ -1,6 +1,13 @@
+@use 'utils/colors';
+
 .comment {
 	border-color: black;
 	display: flex;
 	justify-content: space-around;
+	flex-direction: row;
+	background-color: colors.$purple;	
+	margin-bottom: 20px;
+	color: colors.$white;
+	border-radius: 24px;
 
 }

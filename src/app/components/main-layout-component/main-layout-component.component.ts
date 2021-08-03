@@ -11,13 +11,14 @@ import { AuthService } from 'src/app/services/auth.service';
 export class MainLayoutComponentComponent {
 
 	constructor(private authService: AuthService, private router: Router) {}
+	
 	public logOut(): void {
 		this.authService.logOut();
 		this.router.navigate(['/login'])
 	}
 
 
-	isMobile: boolean = false;
+	isMobile: boolean = true;
 	x = window.matchMedia("(max-width: 700px)")
 	public mobileToggle(x: any) {
 		if(x) {

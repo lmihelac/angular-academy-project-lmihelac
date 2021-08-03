@@ -1,22 +1,26 @@
-<mat-card>
-	<form [formGroup]="reviewFormGroup">
-		<mat-form-field appearance="outline">
-			<mat-label>Comment</mat-label>
-			<input matInput placeholder="Write your review here" formControlName="comment" type="text" />
-			<mat-error *ngIf="reviewFormGroup.get('comment')?.errors?.required">Comment is required</mat-error>
-		</mat-form-field>
+<mat-card class="mat-card">
+	<div class="form">
 
 
-		<mat-form-field appearance="outline">
-			<mat-label>Rating</mat-label>
-			<input matInput placeholder="Rating" formControlName="rating" type="number" min="1" max="5" />
-			<mat-error *ngIf="reviewFormGroup.get('rating')?.errors?.required">Rating is required</mat-error>
-		</mat-form-field>
-
-		<button mat-raised-button color="primary" (click)="onAddReview()" [disabled]="reviewFormGroup.invalid">Post
-			comment</button>
+		<form [formGroup]="reviewFormGroup">
+			<mat-form-field appearance="outline">
+				<mat-label>Comment</mat-label>
+				<input matInput placeholder="Write your review here" formControlName="comment" type="text" />
+				<mat-error *ngIf="reviewFormGroup.get('comment')?.errors?.required">Comment is required</mat-error>
+			</mat-form-field>
 
 
+			<mat-form-field appearance="outline">
+				<mat-label>Rating</mat-label>
+				<input matInput placeholder="Rating" formControlName="rating" type="number" min="1" max="5" />
+				<mat-error *ngIf="reviewFormGroup.get('rating')?.errors?.required">Rating is required</mat-error>
+			</mat-form-field>
 
-	</form>
+			<button mat-raised-button color="primary" (click)="onAddReview()" [disabled]="reviewFormGroup.invalid">Post
+				comment</button>
+
+
+
+		</form>
+	</div>
 </mat-card>

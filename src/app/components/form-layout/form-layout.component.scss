@@ -1,7 +1,9 @@
+@use 'utils/colors';
+
 :host {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	height: 100%;
-	background-color: rgb(155, 155, 155);
+	background-color: colors.$darkpurple;
 }

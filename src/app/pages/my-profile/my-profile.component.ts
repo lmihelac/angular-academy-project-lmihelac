@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-my-profile',
@@ -6,11 +7,14 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./my-profile.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MyProfileComponent implements OnInit {
+export class MyProfileComponent  {
 
-  constructor() { }
+  constructor(private authservice: AuthService) { }
 
-  ngOnInit(): void {
+  public getEmail() {
+    return this.authservice.getAuthData()
   }
+
+
 
 }
