@@ -1,17 +1,26 @@
 <mat-drawer-container class="main-layout">
-	<mat-drawer class="mobile" position="end" #drawer>
-		<button mat-icon-button (click)="drawer.close()">
-			<mat-icon>close</mat-icon>
-		</button>
+	<mat-drawer class="side-drawer" [mode]="isMobile ? 'over' : 'side'" [position]="isMobile ? 'end': 'start'"
+		[opened]="isMobile ? 'false' : 'true'" #drawer>
+		<div class="drawer-button-layout">
+			<app-logo *ngIf="!isMobile" class="logo"></app-logo>
 
-		<app-sidenav></app-sidenav>
+
+			<button *ngIf="isMobile" (click)="drawer.close()">
+				<mat-icon class="logo">close</mat-icon>
+			</button>
+
+			<app-sidenav class="sidenav"></app-sidenav>
+
+			<button mat-raised-button color="primary" (click)="logOut()">Log out</button>
+		</div>
+
 	</mat-drawer>
 
 	<mat-drawer-content class="drawer-content">
 
-		<header>
+		<header *ngIf="isMobile">
 			<app-logo></app-logo>
-			<!-- logo.svg ne radi -->
+
 			<button mat-icon-button (click)="drawer.open()">
 				<mat-icon>menu</mat-icon>
 			</button>
@@ -21,4 +30,3 @@
 
 	</mat-drawer-content>
 </mat-drawer-container>
-<!-- [mode]="isMobile ? 'over' : 'side'  " -->

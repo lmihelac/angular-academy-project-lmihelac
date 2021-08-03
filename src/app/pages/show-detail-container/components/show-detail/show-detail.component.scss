@@ -1,5 +1,21 @@
+@use 'utils/colors';
+
 img {
-	height: 240px;
-	width: 300px;
+	height: 356px;
+	width: 100%;
 	border-radius: 6px;
+	overflow: hidden;
+	margin: 0;
+}
+* {
+	background-color: colors.$white;
+	color: colors.$purple2
+}
+.title-rating {
+	background-color: colors.$white;
+	color: colors.$purple2
+}
+.show-description {
+	background-color: colors.$white;
+	color: colors.$purple2
 }

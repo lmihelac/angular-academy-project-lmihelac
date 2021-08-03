@@ -10,7 +10,6 @@ import { AuthService } from 'src/app/services/auth.service';
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SidenavComponent  {
-	constructor(private authService: AuthService, private router: Router) {}
 public	links: Array<ILink> = [
 		{
 			url: '',
@@ -26,8 +25,5 @@ public	links: Array<ILink> = [
 		}
 	];
 
-	public logOut(): void {
-		this.authService.logOut();
-		this.router.navigate(['/login'])
-	}
+
 }

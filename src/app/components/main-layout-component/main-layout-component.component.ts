@@ -1,4 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
 	selector: 'app-main-layout-component',
@@ -7,6 +9,25 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainLayoutComponentComponent {
+
+	constructor(private authService: AuthService, private router: Router) {}
+	public logOut(): void {
+		this.authService.logOut();
+		this.router.navigate(['/login'])
+	}
+
+
+	isMobile: boolean = false;
+	x = window.matchMedia("(max-width: 700px)")
+	public mobileToggle(x: any) {
+		if(x) {
+			this.isMobile=true;
+			console.log(window.matchMedia("(max-width: 700px)"))
+		}
+
+	}
+
+
 	
 }
 

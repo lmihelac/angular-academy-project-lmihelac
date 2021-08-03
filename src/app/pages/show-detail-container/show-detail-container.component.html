@@ -1,9 +1,12 @@
 <ng-container *ngIf="(templateData$ | async) as templateData">
-	<app-show-detail [show]="templateData.show"></app-show-detail>
 
+	<div class="show-detail-container">
+		<app-show-detail [show]="templateData.show"></app-show-detail>
+	</div>
 
-
-	<app-review-form (addReview)="onReviewAdd($event)"></app-review-form>
+	<div class="review-form-container">
+		<app-review-form (addReview)="onReviewAdd($event)"></app-review-form>
+	</div>
 
 
 

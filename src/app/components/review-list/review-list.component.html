@@ -1,8 +1,9 @@
 <ng-container *ngIf="reviews.length > 0; else elseBlock">
-
+<div class="review-container">
 	<ng-container *ngFor="let review of reviews">
 		<app-review-card [comment]="review.comment" [rating]="review.rating"></app-review-card>
 	</ng-container>
+</div>
 
 </ng-container>
 

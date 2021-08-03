@@ -8,3 +8,24 @@ header {
 	padding: 32px;
 }
 
+.main-layout {
+	height: 100%
+}
+
+.side-drawer {
+	padding: 30px 30px 56px;
+	display: flex;
+	flex-direction: column;
+	.logo {
+		margin-bottom: 80px;
+	}
+	.sidenav {
+		flex: 1;
+	}
+}
+
+.drawer-button-layout {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
