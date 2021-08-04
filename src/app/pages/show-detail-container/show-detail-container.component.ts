@@ -24,31 +24,6 @@ export class ShowDetailContainerComponent  {
 
   constructor(private route: ActivatedRoute, private showService: ShowService, private reviewService: ReviewService) { }
 
-  // public show$: Observable<Show | null> = this.route.paramMap.pipe(
-	// 	map((paramMap)=> {return paramMap.get('id')}),
-	// 	switchMap((id) => {
-	// 		if (id) {
-	// 			return this.showService.getShow(id);
-	// 		}
-
-	// 		return of(null);
-	// 	})
-	// );
-
-
-  // public review$: Observable<Array<Review>> = this.route.paramMap.pipe(
-	// 	switchMap((paramMap) => {
-	// 		const id: string | null = paramMap.get('id');
-	// 		if (id) {
-	// 			return this.reviewService.getReviews(id);
-				
-	// 		}
-	// 			return of([]);
-				
-	// 	})
-	// );
-
-
 	public templateData$: Observable<ItemplateData> = this.route.paramMap.pipe(
 		switchMap((paramMap) => {
 			const id: string | null = paramMap.get('id');
@@ -62,10 +37,6 @@ export class ShowDetailContainerComponent  {
 		})
 
 	)
-
-	
-
-	
 
 
 

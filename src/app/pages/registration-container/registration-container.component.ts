@@ -23,7 +23,6 @@ export class RegistrationContainerComponent {
         this.isLoading$.next(false);
       }),
     ).subscribe((registrationFormData: RegistrationFormData) => {
-      console.log(registrationFormData); //log server responsea
       this.router.navigate(['']);
     });
   }

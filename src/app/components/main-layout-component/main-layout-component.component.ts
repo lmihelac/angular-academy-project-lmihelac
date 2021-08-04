@@ -18,16 +18,7 @@ export class MainLayoutComponentComponent {
 	}
 
 
-	isMobile: boolean = true;
-	x = window.matchMedia("(max-width: 700px)")
-	public mobileToggle(x: any) {
-		if(x) {
-			this.isMobile=true;
-			console.log(window.matchMedia("(max-width: 700px)"))
-		}
-
-	}
-
+	isMobile: boolean = false;
 
 	
 }

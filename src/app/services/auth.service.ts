@@ -53,7 +53,6 @@ export class AuthService {
 
     public getAuthData(): AuthData | null {
       return this.storage.get(this.authDataKey);
-      //console.log(this.authDataKey);
     }
 
     public logOut(): void {
